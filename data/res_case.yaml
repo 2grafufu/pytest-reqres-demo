@@ -1,0 +1,41 @@
+# 资源模块 + 用户注册模块 测试用例
+## --------资源resources接口--------
+- case_name: 获取资源列表
+  url: /unknown
+  method: GET
+  expect_status: 200
+
+- case_name: 获取单条存在的资源
+  url: /unknown/2
+  method: GET
+  expect_status: 200
+  expect_resource_id: 2
+
+- case_name: 获取不存在资源id
+  url: /unknown/999
+  method: GET
+  expect_status: 404
+
+## --------注册register接口--------
+- case_name: 用户注册成功
+  url: /register
+  method: POST
+  payload:
+    email: eve.holt@reqres.in
+    password: "pistol"
+  expect_status: 201
+
+- case_name: 注册缺少password参数【业务异常，会失败】
+  url: /register
+  method: POST
+  payload:
+    email: eve.holt@reqres.in
+  expect_status: 400
+
+- case_name: 注册邮箱不存在
+  url: /register
+  method: POST
+  payload:
+    email: "no_user@xxx.com"
+    password: "123456"
+  expect_status: 400

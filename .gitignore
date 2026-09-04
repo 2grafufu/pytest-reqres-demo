@@ -1,0 +1,21 @@
+# python缓存
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# pytest缓存
+.pytest_cache/
+
+# allure报告产物，不上传github
+allure-results/
+allure-report/
+
+# 日志文件
+*.log
+
+# pycharm编辑器本地配置
+.idea/
+
+# vscode编辑器本地配置
+.vscode/

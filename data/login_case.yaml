@@ -1,0 +1,18 @@
+# 登录接口多组测试数据
+- case_name: 正常登录
+  email: eve.holt@reqres.in
+  password: cityslicka
+  expect_status: 200
+  expect_have_token: true
+
+- case_name: password参数缺失
+  email: eve.holt@reqres.in
+  password: null
+  expect_status: 400
+  expect_have_token: false
+
+- case_name: 账号为空
+  email: ""
+  password: cityslicka
+  expect_status: 400
+  expect_have_token: false
