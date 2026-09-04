@@ -19,3 +19,6 @@ allure-report/
 
 # vscode编辑器本地配置
 .vscode/
+
+# 报告
+reports/
