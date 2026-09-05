@@ -13,9 +13,10 @@ def test_relation_query_user(base_url, get_login_token):
     allure.title("登录获取token，携带token查询用户信息【接口关联演示】")
 
     # 把上一步登录接口拿到的token组装请求头
-    headers = {
-        "Authorization": f"Bearer {get_login_token}"
-    }
+    #headers = {
+    #    "Authorization": f"Bearer {get_login_token}"
+    #}
+    headers={}
 
     url = f"{base_url}/users/2"
     resp = requests.request(

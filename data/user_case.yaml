@@ -5,11 +5,11 @@
   expect_status: 200
   expect_user_id: 2
 
-- case_name: 获取不存在用户id【模拟bug，会失败】
+- case_name: 获取不存在用户id
   url: /users/9999
   method: GET
-  expect_status: 200
-  expect_user_id: 888
+  expect_status: 404
+
 
 - case_name: 创建新用户
   url: /users
