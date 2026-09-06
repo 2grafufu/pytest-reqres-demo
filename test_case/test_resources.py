@@ -5,7 +5,7 @@ from conftest import read_yaml
 
 res_test_data = read_yaml("data/res_case.yaml")
 
-
+@pytest.mark.resource
 @allure.feature("资源&注册模块")
 @pytest.mark.parametrize("case", res_test_data)
 def test_resource_register(base_url, case):

@@ -18,6 +18,20 @@ def test_relation_query_user(base_url, get_login_token):
     #}
     headers={}
 
+
+    #
+    # 1.先创建用户
+    #create_payload = {"name": "test", "job": "tester"}
+    #resp_create = requests.post(f"{base_url}/users", json=create_payload)
+    #new_id = resp_create.json()["id"]  # 拿到后端返回的id
+
+    # 2.把上一步拿到的new_id拼到url，查询刚刚创建的用户
+    #url = f"{base_url}/users/{new_id}"
+    #resp_query = requests.get(url)
+
+
+    #当前使用 reqres 模拟接口，它的数据不会持久化保存；调用创建用户接口之后，无法通过返回的 id 查询到刚刚新建的数据。
+    #所以示例中暂时硬编码写死 id=2 做演示。如果是真实业务接口，需要拿到创建接口返回的 id，用变量拼接 url，完成真正接口关联。
     url = f"{base_url}/users/2"
     resp = requests.request(
         method="GET",

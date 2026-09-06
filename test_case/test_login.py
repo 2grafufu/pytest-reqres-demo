@@ -12,6 +12,8 @@ def test_login_param(base_url, case):
     """yaml数据驱动登录接口"""
     allure.title(case["case_name"])
 
+
+
     payload = {"email": case["email"]}
     if case["password"] is not None:
         payload["password"] = case["password"]
