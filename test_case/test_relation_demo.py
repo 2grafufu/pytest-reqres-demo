@@ -12,7 +12,8 @@ def test_relation_query_user(base_url, get_login_token):
     """
     allure.title("登录获取token，携带token查询用户信息【接口关联演示】")
 
-    # 把上一步登录接口拿到的token组装请求头
+    # 组装token鉴权请求头，完成接口关联：登录返回的token作为本接口header入参
+    # 注意：reqres为mock接口，不支持鉴权，所以 demo 中将组装鉴权头的代码注释保存作为示例，不实际发送
     #headers = {
     #    "Authorization": f"Bearer {get_login_token}"
     #}
